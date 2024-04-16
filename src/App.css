@@ -1,0 +1,151 @@
+.textBetween {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #bebebe;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+.textBetween span {
+  background: #fff;
+  padding: 0 10px;
+  font-size: 16px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  margin: 10px 0px;
+
+  width: 57px;
+  height: 29px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 22px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+/* Define custom radio button style */
+.radio-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Define the square shape */
+.radio-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.radio-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+
+  border: 2px solid #333;
+  border-radius: 4px;
+  display: none;
+}
+
+/* Style when radio button is checked */
+.radio-container input:checked + .radio-label::after {
+  content: '';
+  position: absolute;
+  /* top: 4px; */
+  left: 5px;
+  width: 50px;
+  margin: 0px 2px;
+  padding: 0px 10px;
+  height: 88px;
+  z-index: -1;
+  background: linear-gradient(to right, #DEE5FF, #809AFF);
+  border-radius: 12px;
+}
+/* Style for the label text */
+.radio-label {
+  position: relative;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  padding-top: 15px;
+  padding-left: 12px;
+  /* Adjust the padding to move the text inside the radio button */
+  line-height: 20px;
+  margin: 0px 4px;
+}
+
+.radio-label + .radio-container input:checked {
+  color: white;
+}
+.checked {
+  color: white;
+}
